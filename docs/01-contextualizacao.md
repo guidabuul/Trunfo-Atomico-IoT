@@ -1,29 +1,27 @@
-# 1. Contextualização e proposta
+# 1. Contextualização da proposta
 
-## Contexto do trabalho
+## Contexto do projeto
 
-O Challenge 2026, realizado com o CTMSP/Marinha do Brasil, propõe aproximar a sociedade das aplicações da tecnologia nuclear. O grupo desenvolve o **Trunfo Atômico**, um aplicativo educativo com catálogo de isótopos, confronto de cartas por atributos e cálculo de decaimento radioativo. A versão 1.2.0 também prevê perguntas de "Mito ou verdade?" no detalhe das cartas.
+O Trunfo Atômico é um projeto educativo desenvolvido para o Challenge FIAP 2026, relacionado ao CTMSP e à Marinha do Brasil. O aplicativo apresenta isótopos e suas aplicações por meio de cartas, comparações de atributos e do cálculo de decaimento radioativo na função *Quanto sobra?*.
 
-Na disciplina de Disruptive Architectures: IoT, IoB & Generative IA, a contribuição do grupo consiste em estudar uma aplicação de Internet das Coisas associada ao tema. O recorte escolhido é o registro da movimentação de recipientes identificados e a observação de condições ambientais em um setor hospitalar que utiliza materiais radioativos.
-
-A proposta dialoga com o **Desafio 02 — Segurança física em instalações nucleares**, apresentado pela AMAZUL no kickoff de 13/10/2026. Não se trata de instalar um sistema em hospital, mas de descrever seu funcionamento e representar seus dados em uma atividade educativa do Trunfo Atômico.
+Para a disciplina de Disruptive Architectures: IoT, IoB & Generative IA, o grupo propõe estudar o uso de Internet das Coisas no acompanhamento de materiais radioativos em um setor hospitalar. A proposta se relaciona ao **Desafio 02 — Segurança física em instalações nucleares**, apresentado pela AMAZUL no kickoff do Challenge, em 13 de outubro de 2026.
 
 ## Problema abordado
 
-Em locais com materiais controlados, a identificação de recipientes, o registro de passagem e a observação de variáveis ambientais são atividades distintas. Sua integração em um único painel pode facilitar o acompanhamento de ocorrências e a compreensão dos dados produzidos pelos equipamentos.
+No cenário considerado, é importante registrar a passagem de frascos por pontos de controle, acompanhar as condições do ambiente e consultar as informações de cada material. Reunir esses registros facilita a identificação de ocorrências e permite acompanhar, em um mesmo sistema, dados que teriam origens diferentes.
 
-## Objetivo
+## Solução proposta
 
-Apresentar uma arquitetura em que sensores e dispositivos de identificação enviam informações por rede a uma aplicação. O sistema registra os eventos e indica situações que merecem atenção, conforme regras definidas para a demonstração.
+O grupo prevê uma etiqueta RFID em cada frasco e um leitor na porta do setor para registrar sua identificação. Um sensor Geiger-Müller acompanharia a radiação ambiental, enquanto outro sensor registraria temperatura e umidade. O ESP32 receberia essas informações e as enviaria por Wi-Fi, utilizando MQTT, para uma aplicação com armazenamento dos dados e painel de consulta.
 
-## Relação com o aplicativo
+Com esses registros, a aplicação poderia apresentar avisos sobre uma movimentação sem autorização e sobre alterações nas leituras de radiação ambiental. Também seria possível mostrar uma estimativa do decaimento de cada fonte, a partir dos dados de meia-vida. A verificação de uma saída não dependeria apenas da leitura RFID: seria necessário consultar as informações de movimentação e autorização registradas no sistema.
 
-O jogo explica as características dos isótopos e a meia-vida. O módulo de IoT apresenta um exemplo de uso de sensores, identificação eletrônica e comunicação em rede. A função "Quanto sobra?" pode ilustrar uma estimativa teórica de decaimento, mas não substitui medições instrumentais.
+## Relação com o Trunfo Atômico
 
-## Delimitação da Sprint 1
+O Trunfo Atômico trabalha o conceito de meia-vida de forma educativa. A proposta de IoT utiliza esse mesmo conhecimento em um exemplo de acompanhamento de materiais, mostrando como a identificação dos frascos e a coleta de dados poderiam apoiar o registro de eventos.
 
-O material é uma proposta conceitual. Não foram construídos equipamentos, executadas medições radiológicas ou implementada uma integração com o aplicativo. O modelo principal de dados do Trunfo Atômico permanece com AREA, FONTE, ISOTOPO e APLICACAO; eventuais registros de sensores pertencem a uma ampliação futura.
+A quantidade restante calculada a partir da meia-vida é uma estimativa teórica. Ela não substitui uma medição de radiação nem determina se um material pode ser utilizado em um procedimento.
 
-## Resultado da proposta
+## Escopo da Sprint 1
 
-A documentação reúne os dispositivos previstos, a comunicação entre eles e as etapas de registro e consulta. O estudo será apresentado por meio da arquitetura e do fluxograma, conforme as exigências da Sprint 1.
+Esta entrega apresenta o funcionamento previsto, os componentes, a comunicação entre os dispositivos e o fluxo dos dados. Não houve montagem dos equipamentos, medições reais ou integração funcional com o aplicativo. Os exemplos de monitoramento e alerta servem para explicar a proposta; não representam um sistema hospitalar em operação.

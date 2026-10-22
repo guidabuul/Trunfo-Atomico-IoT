@@ -11,3 +11,11 @@
 - **Wi-Fi — Wi-Fi Alliance:** https://www.wi-fi.org/
 
 Estas referências técnicas são indicadas para consulta. Não equivalem a uma validação de equipamentos de radioproteção para uso hospitalar.
+
+## Material didático da disciplina
+- Prof. Me. Renan Rodrigues Mendes. *Aula 00 — IoT*: fundamentos de IoT e sensores.
+- Prof. Me. Renan Rodrigues Mendes. *Aula 01 — IoT*: introdução à eletrônica, Arduino e entrada/processamento/saída.
+- Prof. Me. Renan Rodrigues Mendes. *Aula 02 — IoT*: monitor serial, operadores, estruturas de decisão e repetição.
+- Prof. Me. Renan Rodrigues Mendes. *Aula 03 — IoT*: entradas digitais, pull-up/pull-down, leitura analógica e PWM.
+
+A correspondência dos conteúdos com o projeto está registrada em [Fundamentos das aulas](fundamentos-das-aulas.md). Os arquivos originais das aulas foram consultados como material de estudo e não reproduzidos neste repositório.

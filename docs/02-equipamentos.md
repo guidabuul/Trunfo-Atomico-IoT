@@ -4,9 +4,9 @@ O documento **Trunfo Atômico — Sprint 1.2.0**, na seção 4.7, prevê cinco c
 
 | Componente | Função | Local previsto |
 | --- | --- | --- |
-| Etiqueta RFID | Identificar cada frasco por meio de um código | Em cada frasco, conforme a proposta do grupo |
-| Leitor RFID | Registrar a passagem do frasco identificado | Porta do setor, conforme a proposta do grupo |
-| Sensor Geiger-Müller | Monitorar a radiação do ambiente | Sala de armazenamento, conforme a proposta do grupo |
+| Etiqueta RFID | Identificar cada frasco por meio de um código | Em cada frasco |
+| Leitor RFID | Registrar a passagem do frasco identificado | Porta do setor |
+| Sensor Geiger-Müller | Monitorar a radiação do ambiente | Sala de armazenamento |
 | Sensor de temperatura e umidade | Coletar informações sobre as condições ambientais | Sala de armazenamento; posição exata ainda não definida |
 | ESP32 | Receber as leituras dos dispositivos e transmitir os registros | Próximo aos dispositivos de coleta; posição exata ainda não definida |
 

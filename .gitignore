@@ -1,8 +1,15 @@
-# Arquivos temporários e locais
+# Arquivos locais que não fazem parte da documentação
 .DS_Store
 Thumbs.db
-*.tmp
-*.log
-.env
+Desktop.ini
+
+# Arquivos temporários e configurações de editores
 .vscode/
 .idea/
+*.tmp
+*.bak
+*~
+
+# Arquivos de configuração e registros locais
+.env
+*.log

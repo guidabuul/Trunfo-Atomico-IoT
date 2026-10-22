@@ -1,29 +1,35 @@
 # Fluxo de informações
 
-O esquema apresenta a sequência prevista de coleta, transmissão, registro e exibição. A verificação de autorização ocorre após o recebimento da identificação RFID.
+O fluxo abaixo apresenta o caminho percorrido pelos registros, desde a coleta até a consulta no painel. Após o recebimento da mensagem, a aplicação trata separadamente a identificação por RFID e as leituras dos sensores ambientais.
 
 ```mermaid
 flowchart TD
-    A["RFID e sensores"] --> B["ESP32"]
-    B --> C["Rede Wi-Fi"]
-    C --> D["Broker MQTT"]
-    D --> E["Aplicação"]
-    E --> F["Registro do evento"]
-    F --> G{"Evento de saída?"}
-    G -->|Sim| H{"Movimentação autorizada?"}
-    H -->|Não| I["Aviso de movimentação"]
-    H -->|Sim| J["Passagem registrada"]
-    G -->|Não| K{"Condição ambiental fora da faixa didática?"}
-    K -->|Sim| L["Aviso de condição ambiental"]
-    K -->|Não| M["Leitura registrada"]
-    I --> N["Painel"]
-    J --> N
-    L --> N
-    M --> N
+    A["Leitor RFID"] --> C["ESP32"]
+    B["Sensores ambientais"] --> C
+    C --> D["Rede Wi-Fi"]
+    D --> E["Broker MQTT"]
+    E --> F["Aplicação"]
+    F --> G{"Tipo de registro"}
+
+    G -->|RFID| H{"Passagem pela saída?"}
+    H -->|Sim| I{"Autorização registrada?"}
+    H -->|Não| J["Registrar passagem"]
+    I -->|Sim| J
+    I -->|Não| K["Registrar ocorrência e aviso"]
+
+    G -->|Sensor| L{"Condição fora da faixa didática?"}
+    L -->|Sim| M["Registrar leitura e aviso"]
+    L -->|Não| N["Registrar leitura"]
+
+    J --> O["Armazenamento"]
+    K --> O
+    M --> O
+    N --> O
+    O --> P["Painel de acompanhamento"]
 ```
 
-As condições são definidas exclusivamente para explicar a lógica de funcionamento. O esquema não descreve um sistema operacional instalado em hospital.
+## Interpretação dos registros
 
-## Observação sobre o fluxo
+A leitura RFID informa a identificação de um recipiente em um ponto específico. A verificação da autorização de movimentação depende de informação cadastrada na aplicação. Os sensores ambientais são tratados em um fluxo próprio, sem associação automática a uma passagem de recipiente.
 
-A identificação de um recipiente e a medição das condições ambientais são registros independentes. Ambos chegam à aplicação por meio da comunicação prevista e são apresentados no painel de acordo com a natureza do evento.
+As condições de aviso têm finalidade didática. O diagrama representa a arquitetura proposta pelo grupo, não uma instalação hospitalar em funcionamento.

@@ -40,7 +40,7 @@ flowchart TD
     F --> G["Painel e avisos"]
 ```
 
-O processamento previsto segue a sequência de **entrada, processamento e saída**, presente nos conteúdos estudados na disciplina. O [fluxograma de funcionamento](diagramas/fluxo-de-informacoes.md) apresenta as verificações após o recebimento dos registros.
+O processamento segue a sequência de **entrada, processamento e saída**, estudada na disciplina. Depois do recebimento, a aplicação registra as informações e verifica as condições estabelecidas para cada tipo de evento. O [fluxograma de funcionamento](diagramas/fluxo-de-informacoes.md) detalha essas etapas.
 
 ## Documentação técnica
 

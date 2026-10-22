@@ -1,26 +1,23 @@
-# 2. Equipamentos previstos
+# 2. Componentes e localização
 
-A definição abaixo descreve a função de cada componente na arquitetura. As especificações de interface e de instalação dependeriam da seleção dos módulos em uma etapa posterior.
+O documento **Trunfo Atômico — Sprint 1.2.0**, na seção 4.7, prevê cinco componentes para a coleta e o envio de informações. A tabela mantém esses itens e indica onde seriam utilizados.
 
 | Componente | Função | Local previsto |
 | --- | --- | --- |
-| Etiqueta RFID | Identificar um recipiente por código | Identificação externa do recipiente |
-| Leitor RFID | Registrar a passagem de uma etiqueta por um ponto | Acesso ao setor |
-| ESP32 | Receber os dados dos módulos e encaminhar mensagens | Caixa de controle próxima aos dispositivos |
-| Detector de radiação ambiental | Fornecer leituras do ambiente para a representação do sistema | Ponto de medição definido para a sala |
-| Sensor de temperatura e umidade | Acompanhar condições ambientais | Sala de armazenamento |
-| Ponto de acesso Wi-Fi | Disponibilizar conexão à rede | Infraestrutura local |
-| Servidor com broker MQTT | Receber e distribuir mensagens | Infraestrutura lógica do sistema |
-| Aplicação, armazenamento e painel | Registrar, consultar e apresentar os eventos | Sistema de informação |
+| Etiqueta RFID | Identificar cada frasco por meio de um código | Em cada frasco, conforme a proposta do grupo |
+| Leitor RFID | Registrar a passagem do frasco identificado | Porta do setor, conforme a proposta do grupo |
+| Sensor Geiger-Müller | Monitorar a radiação do ambiente | Sala de armazenamento, conforme a proposta do grupo |
+| Sensor de temperatura e umidade | Coletar informações sobre as condições ambientais | Sala de armazenamento; posição exata ainda não definida |
+| ESP32 | Receber as leituras dos dispositivos e transmitir os registros | Próximo aos dispositivos de coleta; posição exata ainda não definida |
 
-## Identificação e leitura
+As localizações específicas do sensor de temperatura e umidade e do ESP32 são **previsões para explicar a arquitetura**. O planejamento do grupo não determina o ponto exato de instalação desses dois componentes.
 
-O RFID realiza a identificação em pontos específicos. Uma passagem registrada no leitor não significa acompanhamento contínuo do recipiente. Tampouco informa, por si só, quem o transportou ou se houve autorização.
+## Comunicação prevista
 
-## Entradas do microcontrolador
+O ESP32 recebe as informações por interfaces compatíveis com os módulos utilizados e envia os registros pela rede Wi-Fi, utilizando MQTT. O broker encaminha as mensagens à aplicação, que organiza os dados para consulta no painel. Esses recursos de rede e software também estão previstos no documento do grupo, mas não constituem sensores adicionais.
 
-As aulas abordam entradas digitais, leitura analógica e comunicação serial. A forma de conexão deve respeitar o funcionamento do módulo utilizado. Não é correto pressupor que todos os sensores serão lidos por uma entrada analógica. O ESP32 foi mantido por permitir comunicação Wi-Fi, necessária ao desenho proposto.
+## Observações sobre o funcionamento
 
-## Condições de uso
+A leitura RFID identifica um frasco no ponto de passagem; ela não permite afirmar sua localização contínua ou a autorização da movimentação. A autorização precisa ser verificada pela aplicação.
 
-O detector radiológico indicado é apenas uma referência conceitual. Equipamentos utilizados em instalações reais precisam ser apropriados ao tipo de radiação, às condições de medição e às exigências de calibração e operação. Este trabalho não define especificações de radioproteção.
+O Geiger-Müller representa a coleta de dados de radiação ambiental. A proposta não especifica modelo, calibração ou parâmetros de segurança para uso real. A escolha dos módulos, a montagem elétrica e a instalação física não fazem parte desta Sprint.

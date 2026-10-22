@@ -79,6 +79,7 @@ As aulas também abordam pinos digitais e analógicos, monitor serial, estrutura
 
 ## Documentação
 
+- [Fundamentos aplicados das aulas](docs/fundamentos-das-aulas.md)
 - [Descrição técnica da proposta](docs/proposta-tecnica.md)
 - [Componentes e locais previstos](docs/componentes.md)
 - [Comunicação e tratamento de dados](docs/comunicacao.md)

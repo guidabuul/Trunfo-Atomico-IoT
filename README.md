@@ -89,8 +89,6 @@ A Sprint 1 solicita uma proposta conceitual. Não houve montagem de circuito, co
 | Ryan Mazali | 567168 |
 | Thiago Alexandre | 567486 |
 
-**Curso:** Análise e Desenvolvimento de Sistemas — FIAP.
-
 ## Vídeo
 
 A apresentação da proposta terá aproximadamente cinco minutos e será publicada no YouTube como não listada. O link será incluído após a gravação.

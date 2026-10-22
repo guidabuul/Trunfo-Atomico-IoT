@@ -81,7 +81,14 @@ A Sprint 1 solicita uma proposta conceitual. Não houve montagem de circuito, co
 
 ## Integrantes
 
-Diego, Ryan, Renan, Guilherme e Thiago.  
+| Integrante | RM |
+| --- | --- |
+| Diego Paulino | 566841 |
+| Guilherme Dabul | 559901 |
+| Renan Lima | 568321 |
+| Ryan Mazali | 567168 |
+| Thiago Alexandre | 567486 |
+
 **Curso:** Análise e Desenvolvimento de Sistemas — FIAP.
 
 ## Vídeo

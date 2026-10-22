@@ -19,7 +19,7 @@ Descrever os componentes necessários, a comunicação entre dispositivos, o flu
 | Elemento | Aplicação |
 | --- | --- |
 | RFID | Identificação de recipientes em pontos de passagem |
-| Sensor de radiação ambiental | Leitura das condições radiológicas do ambiente, em caráter conceitual |
+| Sensor Geiger-Müller | Monitoramento da radiação ambiental no cenário proposto |
 | Sensor de temperatura e umidade | Registro das condições ambientais |
 | ESP32 | Recepção e organização das leituras |
 | Wi-Fi e MQTT | Transmissão das mensagens |
@@ -44,15 +44,17 @@ O processamento previsto segue a sequência de **entrada, processamento e saída
 
 ## Documentação técnica
 
-| Documento | Conteúdo |
-| --- | --- |
-| [01 — Contextualização](docs/01-contextualizacao.md) | Problema, objetivos e relação com o Challenge |
-| [02 — Equipamentos](docs/02-equipamentos.md) | Componentes, funções e locais previstos |
-| [03 — Transmissão de dados](docs/03-transmissao-de-dados.md) | Comunicação Wi-Fi, MQTT e tratamento das mensagens |
-| [04 — Monitoramento](docs/04-monitoramento.md) | Registro de eventos e condições de aviso |
-| [05 — Relação com a disciplina](docs/05-relacao-com-a-disciplina.md) | Fundamentos das aulas aplicados à arquitetura |
-| [06 — Referências](docs/06-referencias.md) | Materiais consultados |
-| [Fluxo de informações](diagramas/fluxo-de-informacoes.md) | Fluxograma do processamento |
+Os materiais estão organizados de acordo com a sequência dos requisitos da disciplina.
+
+| Ordem | Documento | Conteúdo |
+| --- | --- | --- |
+| 1 | [Contextualização](docs/01-contextualizacao.md) | Descrição da aplicação e relação com o projeto |
+| 2 | [Componentes e localização](docs/02-equipamentos.md) | Equipamentos, funções e locais previstos |
+| 3 | [Transmissão de dados](docs/03-transmissao-de-dados.md) | Rede, MQTT, envio e processamento das informações |
+| 4 | [Fluxograma de funcionamento](diagramas/fluxo-de-informacoes.md) | Caminho dos dados, da coleta até o resultado |
+| 5 | [Monitoramento e alertas](docs/04-monitoramento.md) | Registros, avisos e benefícios esperados |
+
+**Documentos complementares:** [Relação com a disciplina](docs/05-relacao-com-a-disciplina.md) · [Referências](docs/06-referencias.md).
 
 ## Relação com o Trunfo Atômico
 

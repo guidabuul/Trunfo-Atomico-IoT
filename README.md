@@ -65,6 +65,18 @@ O Álbum apresenta os isótopos e suas aplicações; o Duelo compara atributos; 
 
 A estimativa calculada pela meia-vida não substitui uma medição radiológica, nem determina, por si só, condições de uso clínico.
 
+
+## Relação com as aulas da disciplina
+
+A organização da proposta segue o modelo **entrada → processamento → saída**, utilizado nas aulas de introdução à programação e microcontroladores:
+
+- **Entrada e identificação:** RFID identifica o recipiente no ponto de leitura; sensores produzem registros de condições ambientais.
+- **Processamento:** o microcontrolador recebe os dados e a aplicação interpreta os eventos por condições previamente definidas.
+- **Comunicação:** a rede Wi-Fi transporta as mensagens, com MQTT previsto como protocolo de comunicação na arquitetura.
+- **Saída:** o painel apresenta os registros e os avisos educativos.
+
+As aulas também abordam pinos digitais e analógicos, monitor serial, estruturas condicionais e ferramentas de simulação. Esses fundamentos ajudam a explicar uma futura implementação, mas **não constituem funcionalidades implementadas nesta Sprint**. A documentação acadêmica detalha essa relação em [Fundamentos aplicados das aulas](docs/fundamentos-das-aulas.md).
+
 ## Documentação
 
 - [Descrição técnica da proposta](docs/proposta-tecnica.md)

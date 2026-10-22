@@ -14,7 +14,7 @@ A aplicação se relaciona ao **Desafio 02 — Segurança física em instalaçõ
 
 Descrever os componentes necessários, a comunicação entre dispositivos, o fluxo dos dados e as informações que o sistema disponibilizaria. O cenário também permite relacionar os registros do monitoramento ao estudo de meia-vida já presente no aplicativo.
 
-## Solução proposta
+## Descrição da solução
 
 | Elemento | Aplicação |
 | --- | --- |

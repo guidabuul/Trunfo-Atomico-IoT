@@ -23,3 +23,7 @@ O jogo explica as características dos isótopos e a meia-vida. O módulo de IoT
 ## Delimitação da Sprint 1
 
 O material é uma proposta conceitual. Não foram construídos equipamentos, executadas medições radiológicas ou implementada uma integração com o aplicativo. O modelo principal de dados do Trunfo Atômico permanece com AREA, FONTE, ISOTOPO e APLICACAO; eventuais registros de sensores pertencem a uma ampliação futura.
+
+## Resultado da proposta
+
+A documentação reúne os dispositivos previstos, a comunicação entre eles e as etapas de registro e consulta. O estudo será apresentado por meio da arquitetura e do fluxograma, conforme as exigências da Sprint 1.

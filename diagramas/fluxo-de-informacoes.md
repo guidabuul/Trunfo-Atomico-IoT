@@ -23,3 +23,7 @@ flowchart TD
 ```
 
 As condições são definidas exclusivamente para explicar a lógica de funcionamento. O esquema não descreve um sistema operacional instalado em hospital.
+
+## Observação sobre o fluxo
+
+A identificação de um recipiente e a medição das condições ambientais são registros independentes. Ambos chegam à aplicação por meio da comunicação prevista e são apresentados no painel de acordo com a natureza do evento.

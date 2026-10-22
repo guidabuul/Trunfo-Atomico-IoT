@@ -75,18 +75,18 @@ A organização da proposta segue o modelo **entrada → processamento → saíd
 - **Comunicação:** a rede Wi-Fi transporta as mensagens, com MQTT previsto como protocolo de comunicação na arquitetura.
 - **Saída:** o painel apresenta os registros e os avisos educativos.
 
-As aulas também abordam pinos digitais e analógicos, monitor serial, estruturas condicionais e ferramentas de simulação. Esses fundamentos ajudam a explicar uma futura implementação, mas **não constituem funcionalidades implementadas nesta Sprint**. A documentação acadêmica detalha essa relação em [Fundamentos aplicados das aulas](docs/fundamentos-das-aulas.md).
+As aulas também abordam pinos digitais e analógicos, monitor serial, estruturas condicionais e ferramentas de simulação. Esses fundamentos ajudam a explicar uma futura implementação, mas **não constituem funcionalidades implementadas nesta Sprint**. A documentação acadêmica detalha essa relação em [Relação com a disciplina](docs/05-relacao-com-a-disciplina.md).
 
 ## Documentação
 
-- [Fundamentos aplicados das aulas](docs/fundamentos-das-aulas.md)
-- [Descrição técnica da proposta](docs/proposta-tecnica.md)
-- [Componentes e locais previstos](docs/componentes.md)
-- [Comunicação e tratamento de dados](docs/comunicacao.md)
-- [Condições e alertas](docs/alertas.md)
-- [Fluxograma detalhado](diagramas/fluxograma.md)
-- [Roteiro de apresentação](apresentacao/roteiro-video.md)
-- [Referências e fontes](docs/referencias.md)
+- [Fundamentos aplicados das aulas](docs/05-relacao-com-a-disciplina.md)
+- [Contextualização](docs/01-contextualizacao.md)
+- [Equipamentos](docs/02-equipamentos.md)
+- [Transmissão de dados](docs/03-transmissao-de-dados.md)
+- [Monitoramento](docs/04-monitoramento.md)
+- [Fluxo de informações](diagramas/fluxo-de-informacoes.md)
+- [Guia de apresentação](apresentacao/guia-de-apresentacao.md)
+- [Referências e fontes](docs/06-referencias.md)
 
 ## Entrega da disciplina
 

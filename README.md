@@ -1,105 +1,72 @@
-# Trunfo Atômico | IoT e Redes
+# Trunfo Atômico — IoT e Redes
 
-**Challenge FIAP 2026 — Sprint 1**  
-**Disruptive Architectures: IoT, IoB & Generative IA**  
-**Projeto acadêmico em parceria com o CTMSP / Marinha do Brasil**
+**FIAP | Challenge 2026 — Sprint 1**  
+**Disciplina:** Disruptive Architectures: IoT, IoB & Generative IA  
+**Projeto:** Trunfo Atômico | CTMSP — Marinha do Brasil
 
-## Apresentação
+## Resumo
 
-O Trunfo Atômico é uma proposta de aplicativo educativo sobre os usos da tecnologia nuclear. Por meio de cartas de isótopos, duelos de atributos e simulações de meia-vida, o projeto busca tornar esse conhecimento mais acessível.
+O Trunfo Atômico é um aplicativo educativo sobre isótopos e suas aplicações. Na disciplina de IoT e Redes, o grupo propõe um sistema de identificação e monitoramento de recipientes com materiais radioativos, tendo como referência um setor hospitalar. O trabalho corresponde a uma proposta de arquitetura, sem instalação física nesta Sprint.
 
-Nesta disciplina, apresentamos uma **extensão conceitual de Internet das Coisas (IoT)**: um cenário de monitoramento de materiais radioativos em um ambiente hospitalar, representado de forma educativa no aplicativo.
-
-A proposta está relacionada ao **Desafio 02 — Segurança física em instalações nucleares**, apresentado pela AMAZUL no kickoff do Challenge em 13 de outubro de 2026. O sistema proposto utiliza sensores e identificação eletrônica para registrar eventos e ilustrar alertas em situações fora das condições previstas.
-
-> **Escopo:** a Sprint 1 exige a descrição da aplicação, dos componentes, da comunicação e do fluxo de dados. Não há implementação física ou integração funcional com o aplicativo nesta etapa. Os exemplos apresentados são simulações educativas.
+A aplicação se relaciona ao **Desafio 02 — Segurança física em instalações nucleares**, apresentado pela AMAZUL no kickoff do Challenge. A finalidade é demonstrar como identificação eletrônica, sensores e comunicação em rede podem apoiar o registro de eventos e a visualização de situações que exigem verificação.
 
 ## Objetivo
 
-Demonstrar como dispositivos conectados podem contribuir para a identificação de recipientes, a coleta de dados ambientais e a apresentação de alertas, relacionando esses conceitos ao conteúdo de meia-vida trabalhado no Trunfo Atômico.
+Descrever os componentes necessários, a comunicação entre dispositivos, o fluxo dos dados e as informações que o sistema disponibilizaria. O cenário também permite relacionar os registros do monitoramento ao estudo de meia-vida já presente no aplicativo.
 
-## Funcionamento proposto
+## Solução proposta
 
-1. Uma etiqueta RFID identifica o recipiente em um ponto de passagem.
-2. Um leitor RFID registra a identificação; sensores acompanham as condições ambientais.
-3. Um ESP32 reúne os dados e os envia por Wi-Fi, usando MQTT, a um servidor de mensagens.
-4. Uma aplicação recebe os registros, consulta as condições definidas para o cenário e organiza as informações.
-5. O painel educativo apresenta registros, estimativas de decaimento e alertas simulados.
-
-**Exemplo de alerta:** o recipiente é identificado na saída do setor e não existe autorização registrada para essa movimentação. O painel informa a ocorrência. A etiqueta RFID, isoladamente, não determina autorização ou localização contínua.
-
-## Componentes e tecnologias
-
-| Recurso | Finalidade na proposta |
+| Elemento | Aplicação |
 | --- | --- |
-| Etiqueta e leitor RFID | Identificar recipientes em pontos de passagem |
-| Detector de radiação Geiger-Müller | Ilustrar a coleta de leituras ambientais |
-| Sensor de temperatura e umidade | Acompanhar condições do ambiente |
-| ESP32 | Receber leituras e enviar mensagens |
-| Wi-Fi | Conectar o dispositivo à rede local |
-| MQTT e broker | Transportar as mensagens dos dispositivos |
-| Aplicação e armazenamento | Registrar, processar e consultar os eventos |
-| Painel educativo | Exibir informações e alertas simulados |
+| RFID | Identificação de recipientes em pontos de passagem |
+| Sensor de radiação ambiental | Leitura das condições radiológicas do ambiente, em caráter conceitual |
+| Sensor de temperatura e umidade | Registro das condições ambientais |
+| ESP32 | Recepção e organização das leituras |
+| Wi-Fi e MQTT | Transmissão das mensagens |
+| Aplicação e banco de dados | Registro e consulta de eventos |
+| Painel | Apresentação de informações e avisos |
 
-## Arquitetura e fluxo
+A movimentação de um recipiente é identificada pela leitura RFID e avaliada conforme a existência de autorização cadastrada. Caso não haja autorização válida para a saída, o painel apresenta um aviso. O RFID não determina, isoladamente, a localização contínua nem a autorização do transporte.
+
+## Arquitetura de comunicação
 
 ```mermaid
 flowchart TD
     A["RFID e sensores ambientais"] --> B["ESP32"]
     B --> C["Rede Wi-Fi"]
     C --> D["Broker MQTT"]
-    D --> E["Aplicação de processamento"]
-    E --> F["Registro de eventos"]
-    E --> G{"Condição de alerta?"}
-    G -->|Sim| H["Alerta educativo"]
-    G -->|Não| I["Atualização do painel"]
-    F --> I
-    H --> I
+    D --> E["Aplicação"]
+    E --> F["Registro dos eventos"]
+    F --> G["Painel e avisos"]
 ```
 
-O diagrama representa uma **arquitetura prevista**, não um sistema já implantado.
+O processamento previsto segue a sequência de **entrada, processamento e saída**, presente nos conteúdos estudados na disciplina. O [fluxograma de funcionamento](diagramas/fluxo-de-informacoes.md) apresenta as verificações após o recebimento dos registros.
 
-## Integração com o jogo
+## Documentação técnica
 
-O Álbum apresenta os isótopos e suas aplicações; o Duelo compara atributos; a função **Quanto sobra?** apresenta o cálculo teórico de decaimento. A extensão IoT utiliza um cenário de monitoramento para mostrar por que registros e medições são importantes no contexto nuclear.
+| Documento | Conteúdo |
+| --- | --- |
+| [01 — Contextualização](docs/01-contextualizacao.md) | Problema, objetivos e relação com o Challenge |
+| [02 — Equipamentos](docs/02-equipamentos.md) | Componentes, funções e locais previstos |
+| [03 — Transmissão de dados](docs/03-transmissao-de-dados.md) | Comunicação Wi-Fi, MQTT e tratamento das mensagens |
+| [04 — Monitoramento](docs/04-monitoramento.md) | Registro de eventos e condições de aviso |
+| [05 — Relação com a disciplina](docs/05-relacao-com-a-disciplina.md) | Fundamentos das aulas aplicados à arquitetura |
+| [06 — Referências](docs/06-referencias.md) | Materiais consultados |
+| [Fluxo de informações](diagramas/fluxo-de-informacoes.md) | Fluxograma do processamento |
 
-A estimativa calculada pela meia-vida não substitui uma medição radiológica, nem determina, por si só, condições de uso clínico.
+## Relação com o Trunfo Atômico
 
+As funcionalidades do aplicativo são o Álbum de Cartas, o Duelo e o cálculo **Quanto sobra?**, além de perguntas de "Mito ou verdade?" no detalhe das cartas. O estudo de IoT complementa esse conteúdo ao apresentar um cenário de identificação, leitura e registro de informações. O cálculo de meia-vida permanece uma estimativa teórica e não substitui medições radiológicas.
 
-## Relação com as aulas da disciplina
+## Escopo e limitações
 
-A organização da proposta segue o modelo **entrada → processamento → saída**, utilizado nas aulas de introdução à programação e microcontroladores:
+A Sprint 1 compreende a documentação da proposta de IoT e Redes. Não foram realizados testes com materiais radioativos, medições ambientais ou implantação hospitalar. Os alertas descritos são exemplos de funcionamento, não critérios operacionais de radioproteção.
 
-- **Entrada e identificação:** RFID identifica o recipiente no ponto de leitura; sensores produzem registros de condições ambientais.
-- **Processamento:** o microcontrolador recebe os dados e a aplicação interpreta os eventos por condições previamente definidas.
-- **Comunicação:** a rede Wi-Fi transporta as mensagens, com MQTT previsto como protocolo de comunicação na arquitetura.
-- **Saída:** o painel apresenta os registros e os avisos educativos.
+## Integrantes
 
-As aulas também abordam pinos digitais e analógicos, monitor serial, estruturas condicionais e ferramentas de simulação. Esses fundamentos ajudam a explicar uma futura implementação, mas **não constituem funcionalidades implementadas nesta Sprint**. A documentação acadêmica detalha essa relação em [Relação com a disciplina](docs/05-relacao-com-a-disciplina.md).
+Guilherme, Diego, Ryan, Renan e Thiago.  
+**Curso:** Análise e Desenvolvimento de Sistemas — FIAP.
 
-## Documentação
+## Vídeo da apresentação
 
-- [Fundamentos aplicados das aulas](docs/05-relacao-com-a-disciplina.md)
-- [Contextualização](docs/01-contextualizacao.md)
-- [Equipamentos](docs/02-equipamentos.md)
-- [Transmissão de dados](docs/03-transmissao-de-dados.md)
-- [Monitoramento](docs/04-monitoramento.md)
-- [Fluxo de informações](diagramas/fluxo-de-informacoes.md)
-- [Guia de apresentação](apresentacao/guia-de-apresentacao.md)
-- [Referências e fontes](docs/06-referencias.md)
-
-## Entrega da disciplina
-
-A entrega oficial prevê um arquivo ZIP contendo o link do **vídeo no YouTube, como não listado, com aproximadamente cinco minutos**, e o link deste repositório com a documentação e o fluxograma.
-
-**Vídeo:** a inserir após a gravação.
-
-## Equipe
-
-Diego · Ryan · Renan · Guilherme · Thiago
-
-**FIAP · Análise e Desenvolvimento de Sistemas · 2026**
-
----
-
-*Material acadêmico e conceitual. Não representa um sistema de segurança operacional, monitoramento radiológico homologado ou procedimento para manuseio de material radioativo.*
+O vídeo explicativo de aproximadamente cinco minutos será publicado no YouTube como não listado. **Link pendente de inclusão após a gravação.**

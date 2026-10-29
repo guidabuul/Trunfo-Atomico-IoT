@@ -22,6 +22,6 @@ O Trunfo Atômico trabalha o conceito de meia-vida de forma educativa. A propost
 
 A quantidade restante calculada a partir da meia-vida é uma estimativa teórica. Ela não substitui uma medição de radiação nem determina se um material pode ser utilizado em um procedimento.
 
-## Escopo da Sprint 1
+## Limites da proposta
 
-Esta entrega apresenta o funcionamento previsto, os componentes, a comunicação entre os dispositivos e o fluxo dos dados. Não houve montagem dos equipamentos, medições reais ou integração funcional com o aplicativo. Os exemplos de monitoramento e alerta servem para explicar a proposta; não representam um sistema hospitalar em operação.
+A documentação descreve o funcionamento previsto, os componentes, a comunicação entre os dispositivos e o fluxo dos dados. O projeto não contempla, nesta etapa, a montagem de equipamentos, medições reais ou integração funcional com o aplicativo. Os exemplos de monitoramento e alerta são ilustrativos e não representam um sistema hospitalar em operação.

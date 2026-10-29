@@ -12,12 +12,10 @@ Para o monitoramento proposto, o grupo definiu a identificação dos frascos por
 
 A localização da etiqueta, do leitor RFID e do sensor Geiger-Müller consta do planejamento do Trunfo Atômico 1.2.0. Para o sensor de temperatura e umidade e o ESP32, o grupo ainda não definiu os pontos exatos de instalação. Os locais indicados na tabela são sugestões para explicar o funcionamento da proposta.
 
+O planejamento também não especifica os modelos dos equipamentos nem os detalhes da montagem elétrica.
+
 ## Funcionamento dos dispositivos
 
 O leitor RFID registraria a identificação de um frasco quando sua etiqueta fosse detectada na porta do setor. Já os sensores acompanhariam as condições ambientais da sala de armazenamento. O ESP32 receberia esses dados e faria o envio à aplicação, conforme a comunicação descrita no documento [03 — Transmissão de dados](03-transmissao-de-dados.md).
 
 A identificação por RFID não informa, sozinha, a direção do movimento nem se a passagem foi autorizada. Para emitir um aviso de saída sem autorização, a aplicação precisaria consultar os registros de movimentação previstos para o sistema.
-
-## Limites desta etapa
-
-A proposta não define marcas e modelos dos módulos, pinos de conexão ou montagem elétrica, nem prevê medições reais. Os equipamentos foram selecionados para a descrição da arquitetura e não constituem uma instalação de monitoramento radiológico em funcionamento.

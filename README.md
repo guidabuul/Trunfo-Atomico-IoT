@@ -1,7 +1,7 @@
-# Trunfo Atômico — IoT e Redes
+# Trunfo Atômico — Disruptive Architectures: IoT, IoB & Generative IA  
 
 **FIAP | Challenge 2026 — Sprint 1**  
-**Disciplina:** Disruptive Architectures: IoT, IoB & Generative IA  
+**Disciplina:** 
 **Projeto do grupo:** Trunfo Atômico  
 **Contexto do Challenge:** CTMSP / Marinha do Brasil
 

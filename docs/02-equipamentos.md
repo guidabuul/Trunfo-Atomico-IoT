@@ -20,4 +20,4 @@ A identificação por RFID não informa, sozinha, a direção do movimento nem s
 
 ## Limites desta etapa
 
-A Sprint 1 não exige definir marcas e modelos dos módulos, pinos de conexão ou montagem elétrica. Também não envolve medições reais. Os equipamentos foram selecionados para a descrição da arquitetura e não constituem uma instalação de monitoramento radiológico em funcionamento.
+A proposta não define marcas e modelos dos módulos, pinos de conexão ou montagem elétrica, nem prevê medições reais. Os equipamentos foram selecionados para a descrição da arquitetura e não constituem uma instalação de monitoramento radiológico em funcionamento.

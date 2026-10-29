@@ -2,7 +2,7 @@
 
 O fluxograma apresenta o caminho dos dados desde a coleta até o painel de acompanhamento. O leitor RFID registra a identificação dos frascos no ponto de passagem, enquanto os sensores coletam informações sobre o ambiente. O ESP32 recebe esses registros e os envia por Wi-Fi e MQTT ao broker, que os encaminha à aplicação.
 
-A aplicação trata cada tipo de informação separadamente: consulta os registros de autorização quando há uma movimentação identificada como saída e verifica as condições estabelecidas para as leituras ambientais.
+A aplicação trata cada tipo de informação separadamente: consulta os registros de autorização quando há uma movimentação identificada como saída e verifica as condições estabelecidas para as leituras ambientais. A estimativa de decaimento segue outro caminho, usando informações da fonte e o conceito de meia-vida.
 
 ```mermaid
 flowchart TD
@@ -28,6 +28,12 @@ flowchart TD
     M --> O
     N --> O
     O --> P["Painel de acompanhamento"]
+
+    Q["Consulta de uma fonte"] --> R["Aplicação: cálculo com a meia-vida"]
+    R --> S["Quantidade restante estimada"]
+    S --> P
 ```
 
-A leitura RFID, por si só, não determina a direção da passagem nem confirma a autorização. Essas informações dependem dos registros mantidos pela aplicação. Da mesma forma, os avisos sobre condições ambientais são exemplos do funcionamento previsto, sem parâmetros de segurança radiológica definidos.
+A leitura RFID, por si só, não determina a direção da passagem nem confirma a autorização. Essas informações dependem dos registros mantidos pela aplicação. Os avisos sobre condições ambientais são exemplos do funcionamento previsto, sem parâmetros de segurança radiológica definidos.
+
+O caminho de decaimento utiliza a quantidade inicial, a meia-vida do isótopo e o tempo decorrido. Trata-se de um cálculo teórico, independente das leituras dos sensores.

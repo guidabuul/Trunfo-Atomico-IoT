@@ -1,6 +1,6 @@
-# Trunfo Atômico — Disruptive Architectures: IoT, IoB & Generative IA  
+# Trunfo Atômico — IoT e Redes
 
-**FIAP | Challenge 2026 — Sprint 1**  
+**FIAP | Challenge 2026**  
 **Disciplina:** Disruptive Architectures: IoT, IoB & Generative IA  
 **Projeto do grupo:** Trunfo Atômico  
 **Contexto do Challenge:** CTMSP / Marinha do Brasil
@@ -11,7 +11,7 @@ O Trunfo Atômico é um projeto de aplicativo educativo sobre isótopos radioati
 
 Para a disciplina de IoT e Redes, o grupo propõe uma aplicação de monitoramento em um setor hospitalar que utiliza materiais radioativos. A ideia é registrar a passagem de frascos identificados, acompanhar condições ambientais e reunir essas informações em um painel. O estudo relaciona o conteúdo sobre meia-vida do Trunfo Atômico a uma situação prática.
 
-A proposta também se relaciona ao **Desafio 02 — Segurança física em instalações nucleares**, apresentado pela AMAZUL no kickoff do Challenge. Nesta Sprint, o trabalho se limita à definição da arquitetura e à descrição de seu funcionamento.
+A proposta também se relaciona ao **Desafio 02 — Segurança física em instalações nucleares**, apresentado pela AMAZUL no kickoff do Challenge. O trabalho apresenta a arquitetura prevista e explica seu funcionamento, sem implantação física.
 
 ## 1. Aplicação proposta
 
@@ -51,7 +51,7 @@ flowchart TD
     H --> G
 ```
 
-O [fluxograma detalhado](diagramas/fluxo-de-informacoes.md) apresenta o tratamento dos registros de passagem e das leituras ambientais.
+O [fluxograma detalhado](diagramas/fluxo-de-informacoes.md) apresenta o tratamento dos registros de passagem e das leituras ambientais, além do cálculo de decaimento em um fluxo separado.
 
 ## 5. Resultados esperados
 
@@ -77,7 +77,7 @@ Os resultados permitiriam acompanhar registros e compreender a utilidade dos sen
 
 ## Limites da proposta
 
-A Sprint 1 solicita uma proposta conceitual. Não houve montagem de circuito, coleta real de dados, instalação hospitalar ou integração funcional com o aplicativo. Os exemplos de avisos não representam parâmetros de segurança radiológica ou critérios de uso clínico.
+A documentação apresenta uma proposta conceitual. Não houve montagem de circuito, coleta real de dados, instalação hospitalar ou integração funcional com o aplicativo. Os exemplos de avisos não representam parâmetros de segurança radiológica ou critérios de uso clínico.
 
 ## Integrantes
 

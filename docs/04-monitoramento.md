@@ -16,7 +16,7 @@ Os registros de temperatura e umidade também ficariam disponíveis para consult
 
 ## Estimativa de decaimento
 
-O Trunfo Atômico apresenta o conceito de meia-vida na função *Quanto sobra?*. A proposta de IoT aproveita esse mesmo cálculo para estimar a quantidade restante de uma fonte após determinado intervalo de tempo:
+O Trunfo Atômico apresenta o conceito de meia-vida na função *Quanto sobra?*. No planejamento do grupo, o painel de IoT utilizaria a mesma fórmula de decaimento prevista para o console .NET. Assim, o monitoramento proposto poderia apresentar uma estimativa da quantidade restante de uma fonte após determinado intervalo de tempo:
 
 `Quantidade restante = Quantidade inicial × (1/2) ^ (Tempo decorrido / Meia-vida)`
 

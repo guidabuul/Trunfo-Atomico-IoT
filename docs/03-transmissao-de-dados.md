@@ -1,34 +1,29 @@
 # 3. Transmissão e tratamento dos dados
 
-## Organização da comunicação
+## Comunicação entre os equipamentos
 
-O ESP32 recebe dados dos módulos conectados e os encaminha pela rede Wi-Fi. Foi considerado o protocolo MQTT para transmissão das mensagens a um broker. Uma aplicação inscrita nos tópicos correspondentes recebe os eventos, verifica os campos enviados e mantém os registros disponíveis para consulta.
+Na arquitetura proposta, o leitor RFID registra a identificação de uma etiqueta quando um frasco passa pelo ponto de controle. Os sensores Geiger-Müller e de temperatura e umidade coletam informações sobre o ambiente.
 
-O broker responde pelo encaminhamento das mensagens. A verificação das regras de monitoramento ocorre na aplicação, não no broker.
+O ESP32 recebe esses dados por conexões compatíveis com cada dispositivo. O planejamento do grupo considera o uso de entradas digitais e analógicas, conforme o tipo de sensor. Como os modelos dos equipamentos ainda não foram definidos, a proposta não especifica pinos nem detalhes da montagem elétrica.
 
-## Sequência de funcionamento
+## Envio pela rede
 
-1. O leitor RFID identifica uma etiqueta ou um sensor produz uma leitura.
-2. O ESP32 recebe a informação e organiza a mensagem.
-3. A mensagem é enviada pela rede Wi-Fi ao broker MQTT.
-4. A aplicação recebe o evento, identifica o dispositivo e registra os dados.
-5. Quando aplicável, consulta a autorização da movimentação ou verifica a condição ambiental prevista.
-6. O painel apresenta o registro e eventual aviso.
+Depois de receber as informações, o ESP32 as encaminharia por **Wi-Fi**, utilizando o protocolo **MQTT**. As mensagens chegariam a um broker MQTT, responsável por distribuí-las à aplicação que faria o processamento.
 
-## Exemplo de registro
+A comunicação seguiria este caminho:
 
-```json
-{
-  "dispositivo": "leitor-porta-01",
-  "evento": "passagem",
-  "recipiente": "REC-001",
-  "local": "saida-setor",
-  "instante": "2026-10-21T14:30:00-03:00"
-}
-```
+**Leitor RFID e sensores → ESP32 → Wi-Fi e MQTT → Broker MQTT → Aplicação/API → Banco de dados → Painel.**
 
-O exemplo é fictício e demonstra somente uma possível estrutura de dados. Não corresponde a uma medição ou transmissão realizada.
+O broker faz o encaminhamento das mensagens. A análise dos registros e a verificação das condições de aviso ficariam a cargo da aplicação.
 
-## Aspectos a considerar em uma futura implementação
+## Processamento e apresentação
 
-A disponibilidade da rede, a confirmação do recebimento, a identificação de dispositivos, as permissões de acesso e o registro de falhas precisariam ser definidos e testados. Não se afirma que esses controles estejam implementados na Sprint 1.
+A aplicação armazenaria os registros recebidos e os disponibilizaria para consulta no painel. No caso do RFID, uma passagem identificada como saída precisaria ser confrontada com as autorizações cadastradas. Se não houvesse autorização válida, o sistema poderia apresentar um aviso.
+
+As leituras dos sensores ambientais também seriam registradas. No cenário proposto, a aplicação poderia indicar alterações na radiação ambiental e apresentar os valores de temperatura e umidade. Os critérios usados para gerar esses avisos não foram definidos para uma instalação real.
+
+Esse processo permite acompanhar informações coletadas em pontos diferentes e reunir os resultados em uma mesma interface. O caminho completo, incluindo as verificações de cada tipo de registro, está representado no [fluxograma de informações](../diagramas/fluxo-de-informacoes.md).
+
+## Limites da proposta
+
+A documentação descreve como a comunicação funcionaria, mas não apresenta uma rede instalada ou mensagens transmitidas por equipamentos reais. O formato das mensagens, os tópicos MQTT e as configurações de conexão dependeriam da escolha dos módulos e de uma implementação futura.

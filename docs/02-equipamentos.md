@@ -1,23 +1,23 @@
-# 2. Componentes e localização
+# 2. Equipamentos e localização
 
-O documento **Trunfo Atômico — Sprint 1.2.0**, na seção 4.7, prevê cinco componentes para a coleta e o envio de informações. A tabela mantém esses itens e indica onde seriam utilizados.
+Para o monitoramento proposto, o grupo definiu a identificação dos frascos por RFID, a coleta de dados ambientais e o uso de um ESP32 para reunir e transmitir as informações. Os componentes previstos são:
 
 | Componente | Função | Local previsto |
 | --- | --- | --- |
-| Etiqueta RFID | Identificar cada frasco por meio de um código | Em cada frasco |
-| Leitor RFID | Registrar a passagem do frasco identificado | Porta do setor |
-| Sensor Geiger-Müller | Monitorar a radiação do ambiente | Sala de armazenamento |
-| Sensor de temperatura e umidade | Coletar informações sobre as condições ambientais | Sala de armazenamento; posição exata ainda não definida |
-| ESP32 | Receber as leituras dos dispositivos e transmitir os registros | Próximo aos dispositivos de coleta; posição exata ainda não definida |
+| Etiqueta RFID | Identificar cada frasco por um código | Em cada frasco |
+| Leitor RFID | Registrar a identificação dos frascos em um ponto de passagem | Porta do setor |
+| Sensor Geiger-Müller | Monitorar a radiação ambiental | Sala de armazenamento |
+| Sensor de temperatura e umidade | Medir a temperatura e a umidade do ambiente | Sala de armazenamento, como sugestão de instalação |
+| ESP32 | Receber os dados dos dispositivos e encaminhá-los à rede | No setor, em posição a definir conforme as conexões |
 
-As localizações específicas do sensor de temperatura e umidade e do ESP32 são **previsões para explicar a arquitetura**. O planejamento do grupo não determina o ponto exato de instalação desses dois componentes.
+A localização da etiqueta, do leitor RFID e do sensor Geiger-Müller consta do planejamento do Trunfo Atômico 1.2.0. Para o sensor de temperatura e umidade e o ESP32, o grupo ainda não definiu os pontos exatos de instalação. Os locais indicados na tabela são sugestões para explicar o funcionamento da proposta.
 
-## Comunicação prevista
+## Funcionamento dos dispositivos
 
-O ESP32 recebe as informações por interfaces compatíveis com os módulos utilizados e envia os registros pela rede Wi-Fi, utilizando MQTT. O broker encaminha as mensagens à aplicação, que organiza os dados para consulta no painel. Esses recursos de rede e software também estão previstos no documento do grupo, mas não constituem sensores adicionais.
+O leitor RFID registraria a identificação de um frasco quando sua etiqueta fosse detectada na porta do setor. Já os sensores acompanhariam as condições ambientais da sala de armazenamento. O ESP32 receberia esses dados e faria o envio à aplicação, conforme a comunicação descrita no documento [03 — Transmissão de dados](03-transmissao-de-dados.md).
 
-## Observações sobre o funcionamento
+A identificação por RFID não informa, sozinha, a direção do movimento nem se a passagem foi autorizada. Para emitir um aviso de saída sem autorização, a aplicação precisaria consultar os registros de movimentação previstos para o sistema.
 
-A leitura RFID identifica um frasco no ponto de passagem; ela não permite afirmar sua localização contínua ou a autorização da movimentação. A autorização precisa ser verificada pela aplicação.
+## Limites desta etapa
 
-O Geiger-Müller representa a coleta de dados de radiação ambiental. A proposta não especifica modelo, calibração ou parâmetros de segurança para uso real. A escolha dos módulos, a montagem elétrica e a instalação física não fazem parte desta Sprint.
+A Sprint 1 não exige definir marcas e modelos dos módulos, pinos de conexão ou montagem elétrica. Também não envolve medições reais. Os equipamentos foram selecionados para a descrição da arquitetura e não constituem uma instalação de monitoramento radiológico em funcionamento.

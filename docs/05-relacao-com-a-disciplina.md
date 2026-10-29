@@ -16,6 +16,6 @@ Já a aula 03 aprofunda o trabalho com entradas digitais, incluindo exemplos de 
 
 ## Comunicação em rede
 
-O envio de dados entre dispositivos faz parte dos fundamentos de IoT apresentados na disciplina. Para a arquitetura do Trunfo Atômico, o grupo definiu o uso de Wi-Fi e MQTT, com um broker responsável por encaminhar as mensagens à aplicação. Essa escolha vem do planejamento da equipe; não representa uma integração já realizada nas práticas com Arduino.
+O envio de dados entre dispositivos faz parte dos fundamentos de IoT apresentados na disciplina. Para a arquitetura do Trunfo Atômico, o grupo definiu o uso de Wi-Fi e MQTT, com um broker responsável por encaminhar as mensagens à aplicação. O roteiro apresentado na aula 00 inclui o ESP32 e os protocolos HTTP e MQTT entre os conteúdos previstos para a disciplina. Neste projeto, essa comunicação é descrita de forma conceitual, sem integração realizada.
 
-Assim, a proposta utiliza os conceitos das aulas como base para descrever uma aplicação de IoT ligada ao tema do Trunfo Atômico, sem afirmar que os equipamentos ou a comunicação já foram implementados.
+Assim, o trabalho relaciona os fundamentos estudados à proposta de monitoramento de materiais radioativos no setor hospitalar.

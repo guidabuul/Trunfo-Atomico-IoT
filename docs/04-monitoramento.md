@@ -1,28 +1,25 @@
-# 4. Registro de eventos e monitoramento
+# 4. Monitoramento e alertas
 
-O acompanhamento proposto reúne identificação de recipientes e informações do ambiente. Cada dado deve ser interpretado segundo sua origem e finalidade.
+O painel previsto pelo grupo reuniria as informações dos frascos identificados e as leituras dos sensores instalados no setor hospitalar. A aplicação registraria esses dados e apresentaria avisos quando identificasse alguma das situações definidas para o cenário.
 
-| Evento | Tratamento previsto | Informação apresentada |
-| --- | --- | --- |
-| Identificação de etiqueta na saída | Consultar se há autorização válida para a movimentação | Registro de saída ou aviso de ocorrência |
-| Leitura ambiental | Comparar o valor com parâmetro definido apenas para a demonstração | Registro da leitura e indicação de atenção |
-| Temperatura e umidade | Apresentar valores e verificar faixa definida no cenário | Histórico e aviso didático |
-| Consulta de um isótopo | Aplicar a fórmula de decaimento aos dados informados | Quantidade restante estimada |
+## Movimentação dos frascos
 
-## Exemplo de passagem sem autorização
+O leitor RFID registraria a identificação de um frasco ao detectar sua etiqueta na porta do setor. A aplicação utilizaria esse registro junto às informações de movimentação cadastradas para verificar se houve uma saída e se ela estava autorizada.
 
-Quando uma etiqueta é lida na saída, a aplicação registra o evento. Em seguida, procura uma autorização vinculada à movimentação. Caso não encontre uma autorização válida, apresenta um aviso no painel. A consulta à autorização é uma etapa independente da leitura RFID.
+Se o sistema identificasse uma saída sem autorização válida, o painel apresentaria um aviso. A leitura RFID, isoladamente, não informa a direção da passagem nem a localização contínua do frasco.
 
-## Estimativa da meia-vida
+## Condições ambientais
 
-A funcionalidade educativa "Quanto sobra?" utiliza a expressão:
+O sensor Geiger-Müller permitiria acompanhar as leituras de radiação ambiental na sala de armazenamento. No cenário proposto, uma elevação em relação à condição definida para a demonstração poderia gerar um aviso no painel.
 
-`quantidade restante = quantidade inicial × (1/2) ^ (tempo decorrido / meia-vida)`
+Os registros de temperatura e umidade também ficariam disponíveis para consulta. Essas informações ajudariam a acompanhar as condições do ambiente, sem que o grupo precise definir parâmetros operacionais de uma instalação hospitalar.
 
-Na base de dados compartilhada do grupo, a meia-vida está expressa em dias. As unidades de tempo utilizadas no cálculo devem ser compatíveis.
+## Estimativa de decaimento
 
-O resultado é uma estimativa matemática de decaimento. Não equivale a um laudo, medição radiológica ou decisão de aptidão para uso clínico.
+O Trunfo Atômico apresenta o conceito de meia-vida na função *Quanto sobra?*. A proposta de IoT aproveita esse mesmo cálculo para estimar a quantidade restante de uma fonte após determinado intervalo de tempo:
 
-## Limites da proposta
+`Quantidade restante = Quantidade inicial × (1/2) ^ (Tempo decorrido / Meia-vida)`
 
-Os alertas aqui descritos são exemplos didáticos. Não foram definidos limiares clínicos, critérios de proteção radiológica ou procedimentos de resposta a ocorrências reais. Essas definições não integram a atividade.
+Com a quantidade inicial, a meia-vida do isótopo e o tempo decorrido, o painel poderia mostrar a estimativa e indicar quando ela atingisse uma referência definida para o exercício. O tempo decorrido e a meia-vida precisam estar na mesma unidade.
+
+Esse cálculo é teórico. Ele ajuda a relacionar o monitoramento ao conteúdo educativo do aplicativo, mas não substitui uma medição radiológica nem determina, por si só, se um material está adequado para uso.

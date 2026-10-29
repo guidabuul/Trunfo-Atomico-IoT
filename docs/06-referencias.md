@@ -1,13 +1,11 @@
 # 6. Referências
 
-Esta documentação foi elaborada com base no enunciado oficial do Challenge, no planejamento do grupo Trunfo Atômico e nos materiais apresentados nas aulas da disciplina.
+Esta documentação foi elaborada com base no enunciado oficial do Challenge, nas informações sobre o Desafio 02 da AMAZUL e nos materiais apresentados nas aulas da disciplina.
 
 ## Documentos do projeto
 
 - **FIAP.** *2TDS Agosto — Marinha 2026 — 1º Semestre, versão 2*. Requisitos da disciplina Disruptive Architectures: IoT, IoB & Generative IA, páginas 29 a 32.
-- **Equipe Trunfo Atômico.** *Trunfo Atômico — planejamento do grupo, versão 1.2.0*. Seção 4.7 — IoT, página 8.
-
-A relação com o **Desafio 02 — Segurança física em instalações nucleares**, apresentado pela AMAZUL, foi retirada do planejamento do grupo, que registra o kickoff de 13 de outubro de 2026.
+- **AMAZUL.** *Challenge FIAP — Kick-off*, 13 de outubro de 2026. Desafio 02 — Segurança física em instalações nucleares. Referência ao evento conforme informações registradas pela equipe Trunfo Atômico.
 
 ## Materiais da disciplina
 

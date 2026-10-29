@@ -2,6 +2,8 @@
 
 O painel previsto pelo grupo reuniria as informações dos frascos identificados e as leituras dos sensores instalados no setor hospitalar. A aplicação registraria esses dados e apresentaria avisos quando identificasse alguma das situações definidas para o cenário.
 
+O painel seria usado pela equipe de medicina nuclear e pelo responsável pela proteção radiológica do setor, que recebem os avisos e decidem o que fazer em cada caso.
+
 ## Movimentação dos frascos
 
 O leitor RFID registraria a identificação de um frasco ao detectar sua etiqueta na porta do setor. A aplicação utilizaria esse registro junto às informações de movimentação cadastradas para verificar se houve uma saída e se ela estava autorizada.
@@ -12,11 +14,11 @@ Se o sistema identificasse uma saída sem autorização válida, o painel aprese
 
 O sensor Geiger-Müller permitiria acompanhar as leituras de radiação ambiental na sala de armazenamento. No cenário proposto, uma elevação em relação à condição definida para a demonstração poderia gerar um aviso no painel.
 
-Os registros de temperatura e umidade também ficariam disponíveis para consulta. Essas informações ajudariam a acompanhar as condições do ambiente, sem que o grupo precise definir parâmetros operacionais de uma instalação hospitalar.
+Os registros de temperatura e umidade também ficariam disponíveis para consulta, ajudando a acompanhar as condições da sala de armazenamento.
 
 ## Estimativa de decaimento
 
-O Trunfo Atômico apresenta o conceito de meia-vida na função *Quanto sobra?*. No planejamento do grupo, o painel de IoT utilizaria a mesma fórmula de decaimento prevista para o console .NET. Assim, o monitoramento proposto poderia apresentar uma estimativa da quantidade restante de uma fonte após determinado intervalo de tempo:
+O Trunfo Atômico apresenta o conceito de meia-vida na função *Quanto sobra?*. O painel de IoT utilizaria a mesma fórmula de decaimento do console .NET do projeto. Assim, o monitoramento proposto poderia apresentar uma estimativa da quantidade restante de uma fonte após determinado intervalo de tempo:
 
 `Quantidade restante = Quantidade inicial × (1/2) ^ (Tempo decorrido / Meia-vida)`
 

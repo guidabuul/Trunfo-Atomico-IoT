@@ -29,11 +29,9 @@ flowchart TD
     N --> O
     O --> P["Painel de acompanhamento"]
 
-    Q["Consulta de uma fonte"] --> R["Aplicação: cálculo com a meia-vida"]
+    Q["Meia-vida do isótopo (catálogo do Trunfo Atômico)"] --> R["Aplicação: cálculo com a meia-vida"]
     R --> S["Quantidade restante estimada"]
     S --> P
 ```
 
-A leitura RFID, por si só, não determina a direção da passagem nem confirma a autorização. Essas informações dependem dos registros mantidos pela aplicação. Os avisos sobre condições ambientais são exemplos do funcionamento previsto, sem parâmetros de segurança radiológica definidos.
-
-O caminho de decaimento utiliza a quantidade inicial, a meia-vida do isótopo e o tempo decorrido. Trata-se de um cálculo teórico, independente das leituras dos sensores.
+O caminho de decaimento utiliza a quantidade inicial, a meia-vida do isótopo e o tempo decorrido, independentemente das leituras dos sensores.

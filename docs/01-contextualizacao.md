@@ -14,13 +14,11 @@ No cenário considerado, é importante registrar a passagem de frascos por ponto
 
 O grupo prevê uma etiqueta RFID em cada frasco e um leitor na porta do setor para registrar sua identificação. Um sensor Geiger-Müller acompanharia a radiação ambiental, enquanto outro sensor registraria temperatura e umidade. O ESP32 receberia essas informações e as enviaria por Wi-Fi, utilizando MQTT, para uma aplicação com armazenamento dos dados e painel de consulta.
 
-Com esses registros, a aplicação poderia apresentar avisos sobre uma movimentação sem autorização e sobre alterações nas leituras de radiação ambiental. Também seria possível mostrar uma estimativa do decaimento de cada fonte, a partir dos dados de meia-vida. A verificação de uma saída não dependeria apenas da leitura RFID: seria necessário consultar as informações de movimentação e autorização registradas no sistema.
+Com esses registros, a aplicação poderia apresentar avisos sobre uma movimentação sem autorização e sobre alterações nas leituras de radiação ambiental. Também seria possível mostrar uma estimativa do decaimento de cada fonte, a partir dos dados de meia-vida.
 
 ## Relação com o Trunfo Atômico
 
 O Trunfo Atômico trabalha o conceito de meia-vida de forma educativa. A proposta de IoT utiliza esse mesmo conhecimento em um exemplo de acompanhamento de materiais, mostrando como a identificação dos frascos e a coleta de dados poderiam apoiar o registro de eventos.
-
-A quantidade restante calculada a partir da meia-vida é uma estimativa teórica. Ela não substitui uma medição de radiação nem determina se um material pode ser utilizado em um procedimento.
 
 ## Limites da proposta
 

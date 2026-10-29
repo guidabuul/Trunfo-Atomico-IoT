@@ -42,16 +42,16 @@ O objetivo é reunir as informações em um único local e indicar ocorrências 
 | Etiqueta RFID | Identificar cada frasco por um código | Em cada frasco |
 | Leitor RFID | Registrar a identificação na passagem | Porta do setor |
 | Sensor Geiger-Müller | Coletar dados de radiação ambiental | Sala de armazenamento |
-| Sensor de temperatura e umidade | Registrar as condições ambientais | Local de instalação a definir |
-| ESP32 | Receber as informações dos dispositivos e encaminhá-las à rede | Local de instalação a definir |
+| Sensor de temperatura e umidade | Registrar as condições ambientais | Sala de armazenamento |
+| ESP32 | Receber as informações dos dispositivos e encaminhá-las à rede | No setor, junto ao leitor RFID da porta |
 
-Os três primeiros locais constam do planejamento do grupo. A posição dos demais componentes e os modelos específicos dos equipamentos não foram definidos nesta etapa.
+Como referência para uma futura montagem, podem ser usados módulos comuns em projetos com microcontroladores: leitor RFID RC522, em que o frasco é aproximado do leitor ao passar pela porta; sensor DHT22 de temperatura e umidade; e um módulo contador Geiger-Müller.
 
 ## 3. Comunicação e tratamento dos dados
 
 O ESP32 receberia os registros dos módulos conectados por interfaces compatíveis com cada equipamento. A transmissão ocorreria por **Wi-Fi**, com uso do protocolo **MQTT**. Um broker receberia as mensagens e as encaminharia à aplicação responsável pelo processamento.
 
-A aplicação registraria as informações em um banco de dados e verificaria as condições previstas para cada evento. O painel permitiria consultar as leituras, as passagens identificadas e os avisos. Esse funcionamento segue a sequência de entrada, processamento e saída estudada na disciplina.
+A aplicação registraria as informações em um banco de dados e verificaria as condições previstas para cada evento. O painel permitiria consultar as leituras, as passagens identificadas e os avisos. O painel seria usado pela equipe de medicina nuclear e pelo responsável pela proteção radiológica do setor, que recebem os avisos e decidem o que fazer em cada caso. Esse funcionamento segue a sequência de entrada, processamento e saída estudada na disciplina.
 
 ## 4. Fluxograma
 
@@ -71,13 +71,13 @@ O [fluxograma detalhado](diagramas/fluxo-de-informacoes.md) apresenta o tratamen
 
 ## 5. Resultados esperados
 
-O planejamento do grupo prevê três situações para apresentação no painel:
+O painel apresentaria três tipos de aviso:
 
 1. **Movimentação sem autorização:** aviso quando o sistema registrar a saída de um frasco sem autorização válida.
-2. **Alteração da radiação ambiental:** aviso diante de elevação das leituras do sensor, considerando critérios a serem definidos para a demonstração.
+2. **Alteração da radiação ambiental:** aviso diante de elevação das leituras do sensor, acima de um valor de referência definido para a demonstração.
 3. **Decaimento de uma fonte:** estimativa da quantidade restante, calculada a partir da meia-vida, com indicação quando atingir a referência definida para o exercício.
 
-Os resultados permitiriam acompanhar registros e compreender a utilidade dos sensores e da comunicação em rede. A estimativa de meia-vida não é uma medição radiológica e não determina, por si só, a possibilidade de uso de um material.
+Os resultados permitiriam acompanhar registros e compreender a utilidade dos sensores e da comunicação em rede.
 
 ## Documentação
 
@@ -88,13 +88,10 @@ Os resultados permitiriam acompanhar registros e compreender a utilidade dos sen
 | [Transmissão de dados](docs/03-transmissao-de-dados.md) | Rede, protocolo e processamento das mensagens |
 | [Fluxo de informações](diagramas/fluxo-de-informacoes.md) | Caminho dos dados e decisões previstas |
 | [Monitoramento](docs/04-monitoramento.md) | Registros e condições de aviso |
-| [Relação com a disciplina](docs/05-relacao-com-a-disciplina.md) | Conceitos trabalhados nas aulas |
-| [Referências](docs/06-referencias.md) | Documentos e materiais consultados |
 
 ## Limites da proposta
 
-A documentação apresenta uma proposta conceitual. Não houve montagem de circuito, coleta real de dados, instalação hospitalar ou integração funcional com o aplicativo. Os exemplos de avisos não representam parâmetros de segurança radiológica ou critérios de uso clínico.
-
+A documentação apresenta uma proposta conceitual. Não houve montagem de circuito, coleta real de dados, instalação hospitalar ou integração funcional com o aplicativo. Os exemplos de avisos não representam parâmetros de segurança radiológica ou critérios de uso clínico. O cálculo de decaimento é uma estimativa teórica e não substitui uma medição de radiação.
 
 ## Vídeo
 

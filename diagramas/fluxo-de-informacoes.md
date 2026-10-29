@@ -1,35 +1,33 @@
 # Fluxo de informações
 
-O fluxo abaixo apresenta o caminho percorrido pelos registros, desde a coleta até a consulta no painel. Após o recebimento da mensagem, a aplicação trata separadamente a identificação por RFID e as leituras dos sensores ambientais.
+O fluxograma apresenta o caminho dos dados desde a coleta até o painel de acompanhamento. O leitor RFID registra a identificação dos frascos no ponto de passagem, enquanto os sensores coletam informações sobre o ambiente. O ESP32 recebe esses registros e os envia por Wi-Fi e MQTT ao broker, que os encaminha à aplicação.
+
+A aplicação trata cada tipo de informação separadamente: consulta os registros de autorização quando há uma movimentação identificada como saída e verifica as condições estabelecidas para as leituras ambientais.
 
 ```mermaid
 flowchart TD
     A["Leitor RFID"] --> C["ESP32"]
     B["Sensores ambientais"] --> C
-    C --> D["Rede Wi-Fi"]
+    C --> D["Wi-Fi / MQTT"]
     D --> E["Broker MQTT"]
-    E --> F["Aplicação"]
+    E --> F["Aplicação / API"]
     F --> G{"Tipo de registro"}
 
-    G -->|RFID| H{"Passagem pela saída?"}
-    H -->|Sim| I{"Autorização registrada?"}
+    G -->|RFID| H{"Movimentação registrada como saída?"}
+    H -->|Sim| I{"Existe autorização válida?"}
     H -->|Não| J["Registrar passagem"]
     I -->|Sim| J
     I -->|Não| K["Registrar ocorrência e aviso"]
 
-    G -->|Sensor| L{"Condição fora da faixa didática?"}
+    G -->|Sensores| L{"Leitura atende à condição de aviso?"}
     L -->|Sim| M["Registrar leitura e aviso"]
     L -->|Não| N["Registrar leitura"]
 
-    J --> O["Armazenamento"]
+    J --> O["Banco de dados"]
     K --> O
     M --> O
     N --> O
     O --> P["Painel de acompanhamento"]
 ```
 
-## Interpretação dos registros
-
-A leitura RFID informa a identificação de um recipiente em um ponto específico. A verificação da autorização de movimentação depende de informação cadastrada na aplicação. Os sensores ambientais são tratados em um fluxo próprio, sem associação automática a uma passagem de recipiente.
-
-As condições de aviso têm finalidade didática. O diagrama representa a arquitetura proposta pelo grupo, não uma instalação hospitalar em funcionamento.
+A leitura RFID, por si só, não determina a direção da passagem nem confirma a autorização. Essas informações dependem dos registros mantidos pela aplicação. Da mesma forma, os avisos sobre condições ambientais são exemplos do funcionamento previsto, sem parâmetros de segurança radiológica definidos.

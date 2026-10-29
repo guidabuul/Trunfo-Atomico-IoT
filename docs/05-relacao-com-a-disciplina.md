@@ -1,18 +1,21 @@
 # 5. Relação com os conteúdos da disciplina
 
-A elaboração desta proposta considerou os materiais das aulas 00 a 03, ministradas pelo professor Renan Rodrigues Mendes. O conteúdo das apresentações introduz os fundamentos necessários para entender o fluxo de informações de um sistema conectado.
+A proposta de monitoramento do Trunfo Atômico utiliza conceitos apresentados nas aulas 00 a 03 da disciplina, ministradas pelo professor Renan Rodrigues Mendes. Esses conteúdos ajudam a explicar como os dispositivos coletariam informações, como elas seriam processadas e de que forma chegariam ao painel.
 
-| Conteúdo estudado | Correspondência no trabalho |
-| --- | --- |
-| Internet das Coisas e rastreabilidade | Identificação de recipientes por RFID |
-| Sensores e coleta de dados | Medições ambientais previstas |
-| Microcontroladores | ESP32 como ponto de recepção dos dispositivos |
-| Entrada, processamento e saída | Coleta de eventos, verificação das condições e apresentação no painel |
-| Entradas digitais e analógicas | Possíveis interfaces com os módulos, conforme suas especificações |
-| Estruturas condicionais | Comparação de eventos com regras de monitoramento |
-| Comunicação e redes | Envio dos registros por Wi-Fi e MQTT |
-| Simulação de sistemas | Representação dos eventos no contexto educativo do jogo |
+## Identificação e coleta de dados
 
-As aulas apresentam práticas com Arduino UNO, LEDs, botões, monitor serial, funções `setup()` e `loop()`, entradas digitais e analógicas. Essas atividades ajudam a compreender os componentes da arquitetura. Entretanto, o trabalho não declara que os circuitos apresentados pelo professor foram reproduzidos ou que os módulos de monitoramento já foram integrados.
+A aula 00 apresenta os fundamentos da Internet das Coisas, o uso de sensores e a comunicação entre dispositivos. O material também aborda tecnologias de identificação, com menção ao RFID. No projeto, esses conceitos aparecem nas etiquetas utilizadas para identificar os frascos e nos sensores que acompanhariam a radiação ambiental, a temperatura e a umidade.
 
-O uso de RFID e MQTT na solução decorre do planejamento da equipe, com apoio dos conceitos gerais estudados. A escolha não deve ser confundida com uma implementação demonstrada nos materiais das aulas.
+## Processamento das informações
+
+Na aula 01, o professor trabalha com o Arduino UNO, os pinos de entrada e saída e a sequência de entrada, processamento e saída. O grupo escolheu o ESP32 para receber os dados dos dispositivos e encaminhá-los à rede. Embora seja outro microcontrolador, sua função na arquitetura segue o princípio estudado em sala.
+
+A aula 02 apresenta estruturas condicionais e o monitor serial. A lógica das condições ajuda a explicar as verificações previstas na aplicação: identificar uma movimentação sem autorização ou reconhecer uma leitura ambiental que precise de atenção.
+
+Já a aula 03 aprofunda o trabalho com entradas digitais, incluindo exemplos de leitura de botões e resistores pull-up e pull-down. Esses conteúdos ajudam a compreender a conexão entre dispositivos e microcontroladores, embora os pinos e as interfaces exatas dependam dos módulos que seriam escolhidos para o projeto.
+
+## Comunicação em rede
+
+O envio de dados entre dispositivos faz parte dos fundamentos de IoT apresentados na disciplina. Para a arquitetura do Trunfo Atômico, o grupo definiu o uso de Wi-Fi e MQTT, com um broker responsável por encaminhar as mensagens à aplicação. Essa escolha vem do planejamento da equipe; não representa uma integração já realizada nas práticas com Arduino.
+
+Assim, a proposta utiliza os conceitos das aulas como base para descrever uma aplicação de IoT ligada ao tema do Trunfo Atômico, sem afirmar que os equipamentos ou a comunicação já foram implementados.

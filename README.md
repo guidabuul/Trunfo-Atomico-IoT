@@ -5,6 +5,14 @@
 **Projeto do grupo:** Trunfo Atômico  
 **Contexto do Challenge:** CTMSP / Marinha do Brasil
 
+## Integrantes
+
+| Integrante | Integrante |
+| --- | --- |
+| Diego Paulino — RM 566841 | Guilherme Dabul — RM 559901 |
+| Renan Lima — RM 568321 | Ryan Mazali — RM 567168 |
+| Thiago Alexandre — RM 567486 | |
+
 ## Apresentação
 
 O Trunfo Atômico é um projeto de aplicativo educativo sobre isótopos radioativos e suas aplicações. O conteúdo é apresentado por meio de cartas, comparações entre atributos e do cálculo de decaimento na função *Quanto sobra?*.
@@ -79,15 +87,6 @@ Os resultados permitiriam acompanhar registros e compreender a utilidade dos sen
 
 A documentação apresenta uma proposta conceitual. Não houve montagem de circuito, coleta real de dados, instalação hospitalar ou integração funcional com o aplicativo. Os exemplos de avisos não representam parâmetros de segurança radiológica ou critérios de uso clínico.
 
-## Integrantes
-
-| Integrante | RM |
-| --- | --- |
-| Diego Paulino | 566841 |
-| Guilherme Dabul | 559901 |
-| Renan Lima | 568321 |
-| Ryan Mazali | 567168 |
-| Thiago Alexandre | 567486 |
 
 ## Vídeo
 

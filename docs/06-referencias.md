@@ -1,22 +1,17 @@
 # 6. Referências
 
+Esta documentação foi elaborada com base no enunciado oficial do Challenge, no planejamento do grupo Trunfo Atômico e nos materiais apresentados nas aulas da disciplina.
+
 ## Documentos do projeto
 
-- FIAP. **Challenge 2026 — Análise e Desenvolvimento de Sistemas, turmas de agosto**, versão 2. Requisitos de Disruptive Architectures: IoT, IoB & Generative IA, páginas 29 a 32.
-- Equipe Trunfo Atômico. **Trunfo Atômico — Sprint 1, versão 1.2.0**. Atualização de 21 de outubro de 2026, seção 4.7.
-- AMAZUL. **Kickoff do Challenge**, 13 de outubro de 2026. Desafio 02 conforme reproduzido no documento de planejamento do grupo.
+- **FIAP.** *2TDS Agosto — Marinha 2026 — 1º Semestre, versão 2*. Requisitos da disciplina Disruptive Architectures: IoT, IoB & Generative IA, páginas 29 a 32.
+- **Equipe Trunfo Atômico.** *Trunfo Atômico — planejamento do grupo, versão 1.2.0*. Seção 4.7 — IoT, página 8.
 
-## Material da disciplina
+A relação com o **Desafio 02 — Segurança física em instalações nucleares**, apresentado pela AMAZUL, foi retirada do planejamento do grupo, que registra o kickoff de 13 de outubro de 2026.
 
-- MENDES, Renan Rodrigues. **Aula 00 — IoT**. FIAP. Conceitos de Internet das Coisas, sensores, identificação e comunicação.
-- MENDES, Renan Rodrigues. **Aula 01 — IoT**. FIAP. Fundamentos de eletrônica e Arduino.
-- MENDES, Renan Rodrigues. **Aula 02 — IoT**. FIAP. Operadores, monitor serial e estruturas de programação.
-- MENDES, Renan Rodrigues. **Aula 03 — IoT**. FIAP. Entradas digitais e analógicas.
+## Materiais da disciplina
 
-## Documentação complementar
-
-- Arduino: https://docs.arduino.cc/
-- Espressif, ESP32: https://www.espressif.com/en/products/socs/esp32
-- MQTT: https://mqtt.org/
-
-Os arquivos das aulas foram utilizados como fonte de consulta, sem reprodução integral no repositório. As referências complementares descrevem tecnologias; não constituem validação de uma instalação radiológica.
+- **MENDES, Renan Rodrigues.** *Aula 00 — IoT*. FIAP. Conceitos de Internet das Coisas, sensores, identificação e comunicação.
+- **MENDES, Renan Rodrigues.** *Aula 01 — IoT*. FIAP. Fundamentos de eletrônica, microcontroladores e entrada, processamento e saída.
+- **MENDES, Renan Rodrigues.** *Aula 02 — IoT*. FIAP. Estruturas de programação, condições e monitor serial.
+- **MENDES, Renan Rodrigues.** *Aula 03 — IoT*. FIAP. Entradas digitais, resistores pull-up e pull-down e PWM.

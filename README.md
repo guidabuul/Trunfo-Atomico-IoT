@@ -7,11 +7,19 @@
 
 ## Integrantes
 
-| Integrante | Integrante |
-| --- | --- |
-| Diego Paulino — RM 566841 | Guilherme Dabul — RM 559901 |
-| Renan Lima — RM 568321 | Ryan Mazali — RM 567168 |
-| Thiago Alexandre — RM 567486 | |
+<table>
+  <tr>
+    <td>Diego Paulino — RM 566841</td>
+    <td>Guilherme Dabul — RM 559901</td>
+  </tr>
+  <tr>
+    <td>Renan Lima — RM 568321</td>
+    <td>Ryan Mazali — RM 567168</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">Thiago Alexandre — RM 567486</td>
+  </tr>
+</table>
 
 ## Apresentação
 

@@ -95,4 +95,6 @@ A documentação apresenta uma proposta conceitual. Não houve montagem de circu
 
 ## Vídeo
 
-A apresentação da proposta terá aproximadamente cinco minutos e será publicada no YouTube como não listada. O link será incluído após a gravação.
+**Apresentação do projeto:** [Assistir no YouTube](https://youtu.be/xgk4O9TZRhE)
+
+O vídeo apresenta a proposta de IoT e Redes, os componentes previstos, a comunicação dos dados e o fluxograma de funcionamento.

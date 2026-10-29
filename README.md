@@ -1,4 +1,4 @@
-# Trunfo Atômico — IoT e Redes
+# Trunfo Atômico — Disruptive Architectures: IoT, IoB & Generative IA
 
 **FIAP | Challenge 2026**  
 **Disciplina:** Disruptive Architectures: IoT, IoB & Generative IA  

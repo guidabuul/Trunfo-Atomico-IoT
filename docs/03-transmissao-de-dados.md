@@ -22,8 +22,6 @@ A aplicação armazenaria os registros recebidos e os disponibilizaria para cons
 
 As leituras dos sensores ambientais também seriam registradas. No cenário proposto, a aplicação poderia indicar alterações na radiação ambiental e apresentar os valores de temperatura e umidade. Os critérios usados para gerar esses avisos não foram definidos para uma instalação real.
 
-Esse processo permite acompanhar informações coletadas em pontos diferentes e reunir os resultados em uma mesma interface. O caminho completo, incluindo as verificações de cada tipo de registro, está representado no [fluxograma de informações](../diagramas/fluxo-de-informacoes.md).
+Esse processo permite acompanhar informações coletadas em pontos diferentes e reunir os resultados em uma mesma interface. A definição dos tópicos MQTT, do formato das mensagens e das configurações de conexão dependeria de uma implementação futura.
 
-## Limites da proposta
-
-A documentação descreve como a comunicação funcionaria, mas não apresenta uma rede instalada ou mensagens transmitidas por equipamentos reais. O formato das mensagens, os tópicos MQTT e as configurações de conexão dependeriam da escolha dos módulos e de uma implementação futura.
+O caminho completo, incluindo as verificações de cada tipo de registro, está representado no [fluxograma de informações](../diagramas/fluxo-de-informacoes.md).
